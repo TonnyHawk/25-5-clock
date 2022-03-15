@@ -1,9 +1,10 @@
 import { createStore } from 'redux'
 
 let primaryState = {
-   sessionDuration: 0.05,
+   sessionDuration: 25,
    breakDuration: 5,
-   timeLeft: 0
+   timeLeft: 0,
+   timerType: 'session'
 }
 
 function reducer(state=primaryState, action){
@@ -53,6 +54,18 @@ function reducer(state=primaryState, action){
          return {
             ...state,
             timeLeft: action.payload
+         }
+      case 'timerType/switch':
+         let timerType;
+         state.timerType === 'session' ? timerType = 'break' : timerType = 'session';
+         return {
+            ...state,
+            timerType
+         }
+      case 'timerType/set':
+         return {
+            ...state,
+            timerType: action.payload
          }
       default:
          return state

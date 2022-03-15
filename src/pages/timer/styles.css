@@ -153,3 +153,19 @@
      height: 100%;
    }
  }
+
+.finished{
+  animation: bleeking 1s infinite;
+}
+
+@keyframes bleeking{
+  from{
+    color: white;
+  }
+  50%{
+    color: red
+  }
+  to{
+    color: white;
+  }
+}
