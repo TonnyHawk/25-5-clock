@@ -1,0 +1,180 @@
+.app {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           flex-direction: column;
+   height: 100%;
+   margin: 0 auto;
+ }
+ 
+ .app__setters {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           flex-direction: column;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   margin-top: 55px;
+   margin-bottom: 95px;
+   -webkit-box-flex: 1;
+       -ms-flex-positive: 1;
+           flex-grow: 1;
+ }
+ 
+ .app__setter {
+   margin-bottom: 80px;
+   max-width: 240px;
+ }
+ 
+ .app__setter:last-child {
+   margin-bottom: 0;
+ }
+ 
+ .app__start {
+   -webkit-box-flex: 0;
+       -ms-flex-positive: 0;
+           flex-grow: 0;
+ }
+ 
+ .setter {
+   text-align: center;
+   width: 100%;
+ }
+ 
+ .setter__title {
+   font-weight: 300;
+   font-size: 30px;
+   line-height: 35px;
+ }
+ 
+ .setter__screen {
+   padding: 13px;
+   width: 100%;
+   background-color: #e9d6ec;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   margin: 25px 0;
+ }
+ 
+ .setter__counter {
+   font-weight: 500;
+   font-size: 45px;
+   line-height: 53px;
+ }
+ 
+ .setter__actions {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   margin-left: -12.5px;
+   margin-right: -12.5px;
+ }
+ 
+ .setter__action {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   padding: 19px;
+   -webkit-box-flex: 1;
+       -ms-flex: 1;
+           flex: 1;
+   margin: 0 12.5px;
+   -webkit-transition: .4s;
+   -o-transition: .4s;
+   transition: .4s;
+ }
+ 
+ .setter__action_inc {
+   background-color: #43d140;
+ }
+ 
+ .setter__action_inc:hover {
+   background-color: #31c12f;
+ }
+ 
+ .setter__action_dec {
+   background-color: #f96e46;
+ }
+ 
+ .setter__action_dec:hover {
+   background-color: #f84f20;
+ }
+ 
+ .start-btn {
+   padding: 55px;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   width: 100%;
+   background-color: #46b1c9;
+   -webkit-transition: .4s;
+   -o-transition: .4s;
+   transition: .4s;
+   border-radius: 20px 20px 0px 0px;
+   border: none;
+ }
+ 
+ .start-btn:hover {
+   background-color: #359eb6;
+ }
+ 
+ @media (min-width: 992px) {
+   .app {
+     max-width: 759px;
+     height: auto;
+     width: 100%;
+   }
+ 
+   .app__setters {
+     -webkit-box-orient: horizontal;
+     -webkit-box-direction: normal;
+         -ms-flex-direction: row;
+             flex-direction: row;
+     -webkit-box-pack: justify;
+         -ms-flex-pack: justify;
+             justify-content: space-between;
+     margin-bottom: 73px;
+     -webkit-box-flex: 0;
+         -ms-flex-positive: 0;
+             flex-grow: 0;
+   }
+ 
+   .app__setter {
+     margin-bottom: 0;
+     max-width: 321px;
+   }
+ 
+   .start-btn {
+     padding: 38px;
+     border-radius: 20px;
+   }
+ }
