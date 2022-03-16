@@ -3,15 +3,11 @@ import iconPlay from './play.svg';
 import Setter from '../../components/Setter';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
-import {useSpring, animated} from 'react-spring'
+import { useRef } from 'react';
+import {motion} from 'framer-motion'
 
 export default function SetPage({start}){
-   const animProps = useSpring({
-       to: { opacity: 1 }, 
-       from: { opacity: 0 },
-       config: {duration: 1000}
-   })
+
    let navigate = useNavigate();
    let sessionDuration = useSelector((state)=>state.sessionDuration);
    let breakDuration = useSelector((state)=>state.breakDuration);
@@ -34,12 +30,16 @@ export default function SetPage({start}){
    }
 
    let actionStart = ()=>{
-      setTimeout(start, 2000);
+      setTimeout(start, 400);
       navigate('/timer');
    }
    
    return (
-      <animated.div style={animProps} class="app" ref={thisPage}>
+      <motion.div 
+      initial={{opacity: 0}}
+      animate={{opacity: 1, transition: {duration: 0.7}}}
+      exit={{opacity: 0, transition: {duration: 0.3}}}
+      class="app" ref={thisPage}>
          <div class="app__setters">
             <Setter 
                title={'Session duration'} 
@@ -57,6 +57,6 @@ export default function SetPage({start}){
          <button class="app__start start-btn" onClick={actionStart}>
             <img src={iconPlay} alt=""/>
          </button>
-      </animated.div>
+      </motion.div>
       )
 }

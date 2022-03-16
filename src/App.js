@@ -9,8 +9,10 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  useLocation
 } from "react-router-dom";
 import {useEffect} from 'react'
+import { motion, AnimatePresence } from "framer-motion";
 
 
 let timer, now, betweenModesTimer;
@@ -107,27 +109,30 @@ function App() {
     timer = setInterval(Timer, 1000);
   }
 
+  let location = useLocation()
 
   return (
     <>
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<SetPage start={startTimer}/>} />
-      <Route path="/timer" element={
-        <TimerPage 
-        minutes={minutesLeft} 
-        secconds={seccondsLeft} 
-        status={status} 
-        type={timerType} 
-        start={startTimer} 
-        refresh={refreshTimer} 
-        resume={resumeTimer} 
-        pause={pauseTimer}/>} 
-      />
-    {/* <LoaderPage/> */}
-    </Routes>
-    </BrowserRouter>
+    
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <Routes key={location.pathname} location={location}>
+          <Route path="/" element={<SetPage start={startTimer}/>} />
+          <Route path="/timer" element={
+            <TimerPage 
+            minutes={minutesLeft} 
+            secconds={seccondsLeft} 
+            status={status} 
+            type={timerType} 
+            start={startTimer} 
+            refresh={refreshTimer} 
+            resume={resumeTimer} 
+            pause={pauseTimer}
+            initiate={defineTimeLeft}/>} 
+          />
+        </Routes>
+      </AnimatePresence>
     <AudioSource beep={beepSound}/>
+    <LoaderPage/>
     </>
   );
 }

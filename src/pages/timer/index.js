@@ -5,9 +5,10 @@ import iconRepeat from './repeat.svg';
 import iconClose from './close.svg';
 import iconStop from './stop.svg';
 import { useNavigate } from 'react-router-dom';
-import { useSpring, animated } from 'react-spring';
+import { useEffect } from 'react';
+import { motion } from "framer-motion"
 
-export default function TimerPage({minutes, secconds, status, start, refresh, resume, pause, type}){
+export default function TimerPage({minutes, secconds, status, start, refresh, resume, pause, type, initiate}){
    let navigate = useNavigate();
    let handleClick = ()=>{
       switch (status) {
@@ -26,6 +27,8 @@ export default function TimerPage({minutes, secconds, status, start, refresh, re
       }
    }
 
+   useEffect(initiate, [])
+
    let actionClose = ()=>{
       refresh()
       navigate('/')
@@ -41,18 +44,14 @@ export default function TimerPage({minutes, secconds, status, start, refresh, re
 
    }
 
-   let animatedBackLayer = useSpring({
-      from: {
-         opacity: 0
-      },
-      to: {
-         opacity: 1
-      }
-   })
-
    return (
       <>
-   <animated.div style={animatedBackLayer} class="timer">
+   <motion.div 
+      initial={{opacity: 0, y: '100vh'}}
+      animate={{opacity: 1, y: 0}}
+      exit={{opacity: 0, y: '100vh'}}
+      transition={{duration: 0.5}}
+      class="timer">
       <img src={iconClose} alt="" class="timer__close-btn" onClick={actionClose}/>
       <p className={`timer__title`}>{status}: {type}</p>
       <p className={`timer__screen ${status === 'Finished' ? 'finished' : ''}`}>
@@ -68,7 +67,7 @@ export default function TimerPage({minutes, secconds, status, start, refresh, re
             <img src={status === 'Finished' ? iconStop : iconRepeat} alt=""/>
          </div>
       </div>
-   </animated.div>
+   </motion.div>
    </>
    )
 }
