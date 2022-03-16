@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/25-5-clock/static/css/main.d08d2626.css",
-    "main.js": "/25-5-clock/static/js/main.1ca0a2da.js",
+    "main.js": "/25-5-clock/static/js/main.372e20a0.js",
     "static/media/beep.mp3": "/25-5-clock/static/media/beep.fd5933ac5da1bf9b1543.mp3",
     "static/media/logo-img.svg": "/25-5-clock/static/media/logo-img.6f9ff6eb3f78d351690bce330f75a7f5.svg",
     "static/media/repeat.svg": "/25-5-clock/static/media/repeat.0bac061587c36ddaf06d1a921e4f78c1.svg",
@@ -13,10 +13,10 @@
     "static/media/close.svg": "/25-5-clock/static/media/close.0cfa37a59532535943ea4573f14f495e.svg",
     "static/media/minus.svg": "/25-5-clock/static/media/minus.55105b939cd08cec6dd40117bc1cb380.svg",
     "main.d08d2626.css.map": "/25-5-clock/static/css/main.d08d2626.css.map",
-    "main.1ca0a2da.js.map": "/25-5-clock/static/js/main.1ca0a2da.js.map"
+    "main.372e20a0.js.map": "/25-5-clock/static/js/main.372e20a0.js.map"
   },
   "entrypoints": [
     "static/css/main.d08d2626.css",
-    "static/js/main.1ca0a2da.js"
+    "static/js/main.372e20a0.js"
   ]
 }
